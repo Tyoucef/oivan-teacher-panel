@@ -1,0 +1,34 @@
+<div id="<%= dom_id test %>">
+  <p>
+    <strong>Name:</strong>
+    <%= test.name %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= test.description %>
+  </p>
+
+  
+  <p>
+    <strong>questions:</strong>
+      <% @test.questions.each do |question| %>
+      
+ 
+      <%= question.body %>
+      <% if question.options.first.nil?%>
+        <%= question.options.each do |option| %>
+          <%= option.suggestion %>
+        <% end %>
+      <% else %>
+      <h6>no options</h6>
+      <% end %>
+  <% end %>
+   
+
+  </p>
+
+
+
+
+</div>

@@ -1,0 +1,41 @@
+<div class= "row">
+<div class="col-6 mx-auto">
+    <h2 class="ms-4">
+      <span class="badge bg-dark text-light">Welcome</span>
+      To
+        <%= image_tag("oivan.jfif", :alt => "Oivan", class:"img-fluid col-3" )%>
+        <span class="badge bg-dark text-light">  Teachers Portal</span>
+
+  </div>
+</div>
+<div class= "row">
+<div class= "col-6 mx-auto mt-5">
+  <div class = "card">  
+      <div class="card-header">
+          <h2 class="card-title text-center">Log in</h2>
+      </div>
+  
+  <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field mt-4">
+        <%= f.email_field :email, class: "form-control", placeholder:"email", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="field mt-3">
+        <%= f.password_field :password, class: "form-control", placeholder:"password", autocomplete: "current-password" %>
+      </div>
+
+      <% if devise_mapping.rememberable? %>
+        <div class="field mt-4">
+          <%= f.check_box :remember_me, class:"form-check-input " %>
+          <%= f.label :remember_me, class:"form-check-label " %>
+        </div>
+      <% end %>
+
+      <div class="actions mt-4">
+        <%= f.submit "Log in", class: "btn btn-success col-12" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>  
